@@ -19,6 +19,7 @@ public abstract class User implements Serializable {
 	private String enrollment;
 	private String email;
 	private String name;
+	private String password;
 
 	public User() {
 
@@ -46,5 +47,13 @@ public abstract class User implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
