@@ -17,7 +17,6 @@ public class Student extends User {
 
 	@Column(name = "date_birth")
 	@NotNull(message = "Date of birth of the user can not be null")
-	@NotEmpty(message = "Date of birth of the user can not be null")
 	private Date dateBirth;
 
 	public String getCPF() {
