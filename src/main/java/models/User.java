@@ -5,10 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "user")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User {
 

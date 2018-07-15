@@ -1,21 +1,33 @@
 package models;
 
-import java.io.Serializable;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
-public class CurricularComponent implements Serializable {
+@Table(name = "curricular_component")
+public class CurricularComponent {
 
-	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "code")
+	@NotNull(message = "Class code can not be null")
+	@NotEmpty(message = "Class can not be empty.")
 	private String code;
+	
+	@Column(name = "name")
+	@NotNull(message = "Class name can not be null")
+	@NotEmpty(message = "Class name not be empty.")
 	private String name;
+	
+	@Column(name = "credits")
 	private int credits;
+	
+	@Column(name = "teacher")
+	@NotNull(message = "Class teacher name can not be null")
+	@NotEmpty(message = "class teacher name can not be empty")
 	private String teacher;
 
 	public CurricularComponent() {
