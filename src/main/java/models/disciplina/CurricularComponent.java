@@ -1,4 +1,4 @@
-package models;
+package models.disciplina;
 
 import java.util.Map;
 
