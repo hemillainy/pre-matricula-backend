@@ -29,11 +29,6 @@ public class CurricularComponent {
 	@Column(name = "credits")
 	private int credits;
 
-	@Column(name = "teacher")
-	@NotNull(message = "Class teacher name can not be null")
-	@NotEmpty(message = "class teacher name can not be empty")
-	private String teacher;
-
 	@Column(name = "students")
 	private Map<String, Student> students;
 
@@ -75,14 +70,6 @@ public class CurricularComponent {
 
 	public void setCredits(int credits) {
 		this.credits = credits;
-	}
-
-	public String getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(String teacher) {
-		this.teacher = teacher;
 	}
 
 	public Map<String, Student> getStudents() {
