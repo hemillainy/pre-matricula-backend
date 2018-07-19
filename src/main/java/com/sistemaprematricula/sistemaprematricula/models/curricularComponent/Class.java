@@ -1,13 +1,16 @@
-package models.disciplina;
+package com.sistemaprematricula.sistemaprematricula.models.curricularComponent;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Class {
-
+	
+	@Id
+	private String code;
 	private String block;
 	private int allocation;
 	private int vacancies;
