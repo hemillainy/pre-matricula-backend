@@ -1,4 +1,5 @@
-package services;
+package com.sistemaprematricula.sistemaprematricula.services;
+
 
 import java.util.List;
 
@@ -7,8 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import models.user.User;
-import repositories.UsersRepository;
+import com.sistemaprematricula.sistemaprematricula.models.user.User;
+import com.sistemaprematricula.sistemaprematricula.repositories.UsersRepository;
+
 
 @Service
 public class UsersService {
@@ -23,6 +25,11 @@ public class UsersService {
 	
 	public List<User> getUsers() {
 		return this.usersRepository.findAll();
+	}
+	
+	public User addUser(User user) {
+		this.usersRepository.save(user);
+		return user;
 	}
 
 }

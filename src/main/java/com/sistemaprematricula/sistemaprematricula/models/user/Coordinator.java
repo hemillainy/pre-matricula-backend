@@ -1,4 +1,5 @@
-package models.user;
+package com.sistemaprematricula.sistemaprematricula.models.user;
+
 
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
