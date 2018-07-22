@@ -1,4 +1,4 @@
-package com.sistemaprematricula.sistemaprematricula.models.user;
+package com.sistemaprematricula.models.user;
 
 
 import javax.persistence.Entity;

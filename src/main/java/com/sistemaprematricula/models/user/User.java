@@ -1,4 +1,4 @@
-package com.sistemaprematricula.sistemaprematricula.models.user;
+package com.sistemaprematricula.models.user;
 
 
 import javax.persistence.Column;
@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User {
+public class User {
 
 	@Id
 	@Column(name = "enrollment")
