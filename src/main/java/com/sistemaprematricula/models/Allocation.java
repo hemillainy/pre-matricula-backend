@@ -11,13 +11,12 @@ import javax.validation.constraints.NotNull;
 @Table(name = "allocation")
 public class Allocation {
 
-	
+	@Id
 	@Column(name = "student_enrollment")
 	@NotNull(message = "Student enrollment can not be null")
 	@NotEmpty(message = "Student enrollment can not be empty")
 	private String studentEnrolllment;
 	
-	@Id
 	@Column(name = "discipline_code")
 	@NotNull(message = "Discipline code can not be null")
 	@NotEmpty(message = "Discipline code can not be empty")
