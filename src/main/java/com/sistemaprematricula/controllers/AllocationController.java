@@ -1,6 +1,7 @@
 package com.sistemaprematricula.controllers;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,16 +19,16 @@ public class AllocationController {
 
 	@Autowired
 	AllocationService allocationService;
-	
+
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public Allocation save(Allocation allocation) {
 		this.allocationService.save(allocation);
 		return allocation;
 	}
-	
+
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Allocation> getAll() {
-		return this.allocationService.getAll();
+	public Map<String, ArrayList<String>> getAll() {
+		return this.allocationService.getStudentsFromDiscipline();
 	}
-	
+
 }
