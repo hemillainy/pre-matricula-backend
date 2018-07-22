@@ -1,4 +1,4 @@
-package com.sistemaprematricula.sistemaprematricula;
+package com.sistemaprematricula;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

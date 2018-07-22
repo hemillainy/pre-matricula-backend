@@ -1,4 +1,4 @@
-package com.sistemaprematricula.sistemaprematricula.models.curricularComponent;
+package com.sistemaprematricula.models.curricularComponent;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
