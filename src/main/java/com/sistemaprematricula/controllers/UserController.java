@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sistemaprematricula.models.user.Student;
 import com.sistemaprematricula.models.user.User;
-import com.sistemaprematricula.services.StudentService;
+import com.sistemaprematricula.services.UserService;
 
 
 @RestController
@@ -21,22 +20,22 @@ import com.sistemaprematricula.services.StudentService;
 public class UserController {
 	
 	@Autowired
-	StudentService studentService;
+	UserService userService;
 	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public List<Student> getAll() {
-		return this.studentService.getUsers();
+	public List<User> getAll() {
+		return this.userService.getUsers();
 	}
 	
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public Student save(@RequestBody Student user) {
-		return this.studentService.save(user);
+	public User save(@RequestBody User user) {
+		return this.userService.save(user);
 	}
 	
 	@RequestMapping(value = "/{enrollment}", method = RequestMethod.GET)
 	public User getUser(@PathVariable String enrollment) {
-		return this.studentService.getUser(enrollment).get();
+		return this.userService.getUser(enrollment).get();
 	}
 
 }

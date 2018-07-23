@@ -6,26 +6,25 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sistemaprematricula.models.user.Student;
 import com.sistemaprematricula.models.user.User;
-import com.sistemaprematricula.repositories.StudentRepository;
+import com.sistemaprematricula.repositories.UserRepository;
 
 @Service
-public class StudentService {
+public class UserService {
 
 	@Autowired
-	StudentRepository studentRepository;
+	UserRepository userRepository;
 
-	public Optional<Student> getUser(String enrollment) {
-		return this.studentRepository.findById(enrollment);
+	public Optional<User> getUser(String enrollment) {
+		return this.userRepository.findById(enrollment);
 	}
 
-	public List<Student> getUsers() {
-		return this.studentRepository.findAll();
+	public List<User> getUsers() {
+		return this.userRepository.findAll();
 	}
 
-	public Student save(Student user) {
-		this.studentRepository.save(user);
+	public User save(User user) {
+		this.userRepository.save(user);
 		return user;
 	}
 

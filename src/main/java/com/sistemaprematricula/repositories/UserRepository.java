@@ -3,9 +3,9 @@ package com.sistemaprematricula.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.sistemaprematricula.models.user.Student;
+import com.sistemaprematricula.models.user.User;
 
-public interface StudentRepository extends JpaRepository<Student, String> {
+public interface UserRepository extends JpaRepository<User, String> {
 	
 
 }

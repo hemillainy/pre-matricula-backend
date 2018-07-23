@@ -9,5 +9,9 @@ import javax.persistence.Table;
 @Table(name = "coordinator")
 @PrimaryKeyJoinColumn(name = "coordinator_id", referencedColumnName="enrollment")
 public class Coordinator extends User {
+
+	public Coordinator(String enrollment, String email, String name, String password) {
+		super(enrollment, email, name, password);
+	}
 	
 }
