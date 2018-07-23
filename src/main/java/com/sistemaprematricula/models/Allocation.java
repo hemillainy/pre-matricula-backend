@@ -18,7 +18,6 @@ public class Allocation {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Id
 	@Column(name = "student_enrollment")
 	@NotNull(message = "Student enrollment can not be null")
 	@NotEmpty(message = "Student enrollment can not be empty")

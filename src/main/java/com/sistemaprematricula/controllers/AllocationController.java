@@ -30,5 +30,10 @@ public class AllocationController {
 	public Map<String, ArrayList<String>> getAll() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
+	
+	@RequestMapping(value = "/students", method = RequestMethod.GET)
+	public Map<String, ArrayList<String>> getDisciplines() {
+		return this.allocationService.getDisciplinesFromStudents();
+	}
 
 }
