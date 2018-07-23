@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "user")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User {
+public abstract class User {
 
 	@Id
 	@Column(name = "enrollment")
