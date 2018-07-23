@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.sistemaprematricula.models.Allocation;
 
 @Repository
-public interface AllocationRepository extends JpaRepository<Allocation, String> {
+public interface AllocationRepository extends JpaRepository<Allocation, Long> {
 
 }

@@ -21,8 +21,9 @@ public class AllocationService {
 		return this.allocationRepository.findAll();
 	}
 
-	public void save(Allocation allocation) {
-		this.allocationRepository.save(allocation);
+	
+	public Allocation save(Allocation allocation) {
+		return this.allocationRepository.save(allocation);
 	}
 
 	public Map<String, ArrayList<String>> getStudentsFromDiscipline() {
@@ -30,7 +31,24 @@ public class AllocationService {
 
 		for (Allocation allocation : this.getAll()) {
 			String key = allocation.getDisciplineCode();
-			String value = allocation.getStudentEnrolllment();
+			String value = allocation.getStudentEnrollment();
+			
+			if (result.containsKey(key)) {
+				result.get(key).add(value);
+			} else {
+				result.put(key, new ArrayList<String>());
+				result.get(key).add(value);
+			}
+		}
+		return result;
+	}
+	
+	public Map<String, ArrayList<String>> getDisciplinesFromStudents() {
+		Map<String, ArrayList<String>> result = new HashMap<>();
+
+		for (Allocation allocation : this.getAll()) {
+			String key = allocation.getStudentEnrollment();
+			String value = allocation.getDisciplineCode();
 			
 			if (result.containsKey(key)) {
 				result.get(key).add(value);

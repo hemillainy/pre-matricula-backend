@@ -7,24 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sistemaprematricula.models.user.User;
-import com.sistemaprematricula.repositories.UsersRepository;
+import com.sistemaprematricula.repositories.UserRepository;
 
 @Service
-public class UsersService {
+public class UserService {
 
 	@Autowired
-	UsersRepository usersRepository;
+	UserRepository userRepository;
 
 	public Optional<User> getUser(String enrollment) {
-		return this.usersRepository.findById(enrollment);
+		return this.userRepository.findById(enrollment);
 	}
 
 	public List<User> getUsers() {
-		return this.usersRepository.findAll();
+		return this.userRepository.findAll();
 	}
 
 	public User save(User user) {
-		this.usersRepository.save(user);
+		this.userRepository.save(user);
 		return user;
 	}
 

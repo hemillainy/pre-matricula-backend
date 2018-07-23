@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sistemaprematricula.models.user.User;
-import com.sistemaprematricula.services.UsersService;
+import com.sistemaprematricula.services.UserService;
 
 
 @RestController
@@ -20,22 +20,22 @@ import com.sistemaprematricula.services.UsersService;
 public class UserController {
 	
 	@Autowired
-	UsersService usersService;
+	UserService userService;
 	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<User> getAll() {
-		return this.usersService.getUsers();
+		return this.userService.getUsers();
 	}
 	
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public User save(@RequestBody User user) {
-		return this.usersService.save(user);
+		return this.userService.save(user);
 	}
 	
 	@RequestMapping(value = "/{enrollment}", method = RequestMethod.GET)
 	public User getUser(@PathVariable String enrollment) {
-		return this.usersService.getUser(enrollment).get();
+		return this.userService.getUser(enrollment).get();
 	}
 
 }

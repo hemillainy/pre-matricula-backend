@@ -2,6 +2,8 @@ package com.sistemaprematricula.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -12,10 +14,14 @@ import javax.validation.constraints.NotNull;
 public class Allocation {
 
 	@Id
+	@Column(name="id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
 	@Column(name = "student_enrollment")
 	@NotNull(message = "Student enrollment can not be null")
 	@NotEmpty(message = "Student enrollment can not be empty")
-	private String studentEnrolllment;
+	private String studentEnrollment;
 	
 	@Column(name = "discipline_code")
 	@NotNull(message = "Discipline code can not be null")
@@ -26,12 +32,12 @@ public class Allocation {
 		
 	}
 
-	public String getStudentEnrolllment() {
-		return studentEnrolllment;
+	public String getStudentEnrollment() {
+		return studentEnrollment;
 	}
 
-	public void setStudentEnrolllment(String studentEnrolllment) {
-		this.studentEnrolllment = studentEnrolllment;
+	public void setStudentEnrollment(String studentEnrollment) {
+		this.studentEnrollment = studentEnrollment;
 	}
 
 	public String getDisciplineCode() {
