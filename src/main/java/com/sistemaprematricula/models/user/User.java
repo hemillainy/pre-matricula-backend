@@ -35,8 +35,11 @@ public abstract class User {
 	@NotEmpty(message = "User password can not be empty")
 	private String password;
 
-	public User() {
-
+	public User(String enrollment, String email, String name, String password) {
+		this.enrollment = enrollment;
+		this.email = email;
+		this.name = name;
+		this.password = password;
 	}
 
 	public String getEnrollment() {
