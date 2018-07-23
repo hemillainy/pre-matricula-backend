@@ -1,5 +1,11 @@
 package com.sistemaprematricula.repositories;
 
-public class CurricularComponentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.sistemaprematricula.models.curricularComponent.CurricularComponent;
+
+@Repository
+public interface CurricularComponentRepository extends JpaRepository<CurricularComponent, String>{
 
 }
