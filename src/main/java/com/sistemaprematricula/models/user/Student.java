@@ -15,36 +15,8 @@ import javax.validation.constraints.NotNull;
 @PrimaryKeyJoinColumn(name = "student_id", referencedColumnName = "enrollment")
 public class Student extends User {
 
-	@Column(name = "cpf")
-	@NotNull(message = "User cpf can not be null.")
-	@NotEmpty(message = "User cpf can not be empty.")
-	private String cpf;
-
-	@Column(name = "date_birth")
-	@NotNull(message = "Date of birth of the user can not be null")
-	private Date dateBirth;
-
 	public Student(String enrollment, String email, String name, String password, String cpf, Date dateBirth) {
 		super(enrollment, email, name, password);
-		this.cpf = cpf;
-		this.dateBirth = dateBirth;
-	}
-	
-	public String getCpf() {
-		return cpf;
-	}
-	
-	
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Date getDateBirth() {
-		return dateBirth;
-	}
-
-	public void setDateBirth(Date dateBirth) {
-		this.dateBirth = dateBirth;
 	}
 
 }
