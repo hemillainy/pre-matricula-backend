@@ -25,9 +25,9 @@ public class Student extends User {
 	private Date dateBirth;
 
 	public Student(String enrollment, String email, String name, String password, String cpf, Date dateBirth) {
+		super(enrollment, email, name, password);
 		this.cpf = cpf;
 		this.dateBirth = dateBirth;
-		super(enrollment, email, name, password);
 	}
 	
 	public String getCpf() {
