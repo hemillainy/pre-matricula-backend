@@ -24,10 +24,10 @@ public class Student extends User {
 	@NotNull(message = "Date of birth of the user can not be null")
 	private Date dateBirth;
 
-	public Student(String enrollment, String email, String name, String passwordString, String cpf, Date dateBirth) {
+	public Student(String enrollment, String email, String name, String password, String cpf, Date dateBirth) {
 		this.cpf = cpf;
 		this.dateBirth = dateBirth;
-		super(enrollment, email, name, passwordString, cpf, dateBirth);
+		super(enrollment, email, name, password);
 	}
 	
 	public String getCpf() {
