@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,9 +22,8 @@ public class AllocationController {
 	AllocationService allocationService;
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public Allocation save(Allocation allocation) {
-		this.allocationService.save(allocation);
-		return allocation;
+	public Allocation save(@RequestBody Allocation allocation) {
+		return this.allocationService.save(allocation);
 	}
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)

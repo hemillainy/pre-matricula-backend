@@ -22,8 +22,8 @@ public class AllocationService {
 	}
 
 	
-	public void save(Allocation allocation) {
-		this.allocationRepository.save(allocation);
+	public Allocation save(Allocation allocation) {
+		return this.allocationRepository.save(allocation);
 	}
 
 	public Map<String, ArrayList<String>> getStudentsFromDiscipline() {
@@ -31,7 +31,7 @@ public class AllocationService {
 
 		for (Allocation allocation : this.getAll()) {
 			String key = allocation.getDisciplineCode();
-			String value = allocation.getStudentEnrolllment();
+			String value = allocation.getStudentEnrollment();
 			
 			if (result.containsKey(key)) {
 				result.get(key).add(value);

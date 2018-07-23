@@ -14,13 +14,15 @@ import javax.validation.constraints.NotNull;
 public class Allocation {
 
 	@Id
+	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@Id
 	@Column(name = "student_enrollment")
 	@NotNull(message = "Student enrollment can not be null")
 	@NotEmpty(message = "Student enrollment can not be empty")
-	private String studentEnrolllment;
+	private String studentEnrollment;
 	
 	@Column(name = "discipline_code")
 	@NotNull(message = "Discipline code can not be null")
@@ -31,12 +33,12 @@ public class Allocation {
 		
 	}
 
-	public String getStudentEnrolllment() {
-		return studentEnrolllment;
+	public String getStudentEnrollment() {
+		return studentEnrollment;
 	}
 
-	public void setStudentEnrolllment(String studentEnrolllment) {
-		this.studentEnrolllment = studentEnrolllment;
+	public void setStudentEnrollment(String studentEnrollment) {
+		this.studentEnrollment = studentEnrollment;
 	}
 
 	public String getDisciplineCode() {
