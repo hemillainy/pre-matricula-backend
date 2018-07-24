@@ -1,5 +1,7 @@
 package com.sistemaprematricula.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,9 @@ public class CurricularComponentService {
 	
 	public CurricularComponent save(CurricularComponent curricularComponent) {
 		return this.curricularComponentRepository.save(curricularComponent);
+	}
+
+	public Optional<CurricularComponent> getCurricularComponent(String code) {
+		return this.curricularComponentRepository.findById(code);
 	}
 }
