@@ -33,4 +33,10 @@ public class CurricularComponentController {
 	public void deleteCurricularComponent(@PathVariable String code) {
 		this.curricularComponentService.deleteCurricularComponent(code);
 	}
+	
+	@RequestMapping(value="updateName/code", method=RequestMethod.PUT)
+	public void updateCodeCurricularComponent(@PathVariable String code) {
+		this.curricularComponentService.updateCodeCurricularComponent(code);
+	}
+	
 }

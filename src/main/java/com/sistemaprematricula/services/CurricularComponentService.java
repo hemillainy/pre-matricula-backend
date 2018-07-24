@@ -25,4 +25,11 @@ public class CurricularComponentService {
 	public void deleteCurricularComponent(String code) {
 		this.curricularComponentRepository.deleteById(code);
 	}
+
+	public void updateCodeCurricularComponent(String code) {
+		CurricularComponent curricularComponent = this.curricularComponentRepository.findById(code).get();
+		if (curricularComponent != null) {
+			curricularComponent.setCode(code);
+		}
+	}
 }
