@@ -1,10 +1,12 @@
 package com.sistemaprematricula.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,13 +29,18 @@ public class AllocationController {
 	}
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public Map<String, ArrayList<String>> getAll() {
+	public Map<String, ArrayList<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
 	
 	@RequestMapping(value = "/students", method = RequestMethod.GET)
-	public Map<String, ArrayList<String>> getDisciplines() {
+	public Map<String, List<String>> getAllDisciplinesFromStudents() {
 		return this.allocationService.getDisciplinesFromStudents();
 	}
 
+	@RequestMapping(value = "/student/{enrollment}", method = RequestMethod.GET)
+	public List<String> getDisciplinesFromStudent(@PathVariable String enrollment) {
+		return this.allocationService.getDisciplinesFromStudent(enrollment);
+	}
+	
 }
