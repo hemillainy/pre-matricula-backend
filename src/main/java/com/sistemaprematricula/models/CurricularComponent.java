@@ -1,4 +1,4 @@
-package com.sistemaprematricula.models.curricularComponent;
+package com.sistemaprematricula.models;
 
 
 import javax.persistence.Column;
@@ -26,9 +26,6 @@ public class CurricularComponent {
 	@Column(name = "credits")
 	private int credits;
 
-	@Column(name = "unclocked")
-	@NotNull(message = "Class teacher name can not be null")
-	private boolean unlocked;
 
 	public CurricularComponent() {
 
@@ -50,13 +47,6 @@ public class CurricularComponent {
 		this.name = name;
 	}
 
-	public boolean isUnlocked() {
-		return unlocked;
-	}
-
-	public void setUnlocked(boolean unlocked) {
-		this.unlocked = unlocked;
-	}
 
 	public int getCredits() {
 		return credits;
