@@ -1,6 +1,5 @@
 package com.sistemaprematricula.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +28,7 @@ public class AllocationController {
 	}
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public Map<String, ArrayList<String>> getAllStudentsFromDisciplines() {
+	public Map<String, List<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
 	

@@ -19,4 +19,7 @@ public interface AllocationRepository extends JpaRepository<Allocation, Long> {
 	
 	@Query("select studentEnrollment from Allocation a where a.disciplineCode = ?1")
 	List<String> findStudentsFromDisciplina(String code);
+	
+	@Query("select disciplineCode from Allocation a")
+	List<String> findDisciplines();
 }

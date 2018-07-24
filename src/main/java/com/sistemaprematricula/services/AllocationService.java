@@ -1,6 +1,5 @@
 package com.sistemaprematricula.services;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -27,19 +26,13 @@ public class AllocationService {
 		return this.allocationRepository.save(allocation);
 	}
 
-	public Map<String, ArrayList<String>> getStudentsFromDiscipline() {
-		Map<String, ArrayList<String>> result = new HashMap<>();
+	public Map<String, List<String>> getStudentsFromDiscipline() {
+		Map<String, List<String>> result = new HashMap<>();
+		
+		HashSet<String> disciplines = new HashSet<String>(this.allocationRepository.findDisciplines());
 
-		for (Allocation allocation : this.getAll()) {
-			String key = allocation.getDisciplineCode();
-			String value = allocation.getStudentEnrollment();
-			
-			if (result.containsKey(key)) {
-				result.get(key).add(value);
-			} else {
-				result.put(key, new ArrayList<String>());
-				result.get(key).add(value);
-			}
+		for (String code : disciplines) {
+			result.put(code, this.getStudentsFromDiscipline(code));
 		}
 		return result;
 	}
