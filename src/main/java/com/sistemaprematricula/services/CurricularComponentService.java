@@ -26,10 +26,9 @@ public class CurricularComponentService {
 		this.curricularComponentRepository.deleteById(code);
 	}
 
-	public void updateCodeCurricularComponent(String code) {
-		CurricularComponent curricularComponent = this.curricularComponentRepository.findById(code).get();
-		if (curricularComponent != null) {
-			curricularComponent.setCode(code);
+	public void updateCurricularComponent(String id, CurricularComponent curricularComponent) {
+		if (this.curricularComponentRepository.existsById(id)) {
+			this.curricularComponentRepository.save(curricularComponent);
 		}
 	}
 }
