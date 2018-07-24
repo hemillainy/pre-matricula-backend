@@ -44,6 +44,10 @@ public class AllocationService {
 		return result;
 	}
 	
+	public List<String> getStudentsFromDiscipline(String code) {
+		return this.allocationRepository.findStudentsFromDisciplina(code);
+	}
+	
 	public Map<String, List<String>> getDisciplinesFromStudents() {
 		Map<String, List<String>> result = new HashMap<>();
 

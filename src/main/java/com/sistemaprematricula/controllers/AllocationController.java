@@ -43,4 +43,9 @@ public class AllocationController {
 		return this.allocationService.getDisciplinesFromStudent(enrollment);
 	}
 	
+	@RequestMapping(value = "/discipline/{code}", method = RequestMethod.GET)
+	public List<String> getStudentsFromDiscipline(@PathVariable String code) {
+		return this.allocationService.getStudentsFromDiscipline(code);
+	}
+	
 }
