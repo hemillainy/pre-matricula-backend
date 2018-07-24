@@ -47,7 +47,7 @@ public class AllocationService {
 	public Map<String, List<String>> getDisciplinesFromStudents() {
 		Map<String, List<String>> result = new HashMap<>();
 
-		HashSet<String> students =  (HashSet<String>) this.allocationRepository.findStudents();
+		HashSet<String> students =  new HashSet<String>(this.allocationRepository.findStudents());
 		
 		for (String enrollment : students) {
 			result.put(enrollment, this.getDisciplinesFromStudent(enrollment));

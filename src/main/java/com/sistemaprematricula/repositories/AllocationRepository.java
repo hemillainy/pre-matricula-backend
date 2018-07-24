@@ -1,7 +1,6 @@
 package com.sistemaprematricula.repositories;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,5 +15,5 @@ public interface AllocationRepository extends JpaRepository<Allocation, Long> {
 	List<String> findDisciplinesFromStudent(String enrollment);
 	
 	@Query("select studentEnrollment from Allocation a")
-	Set<String> findStudents();
+	List<String> findStudents();
 }
