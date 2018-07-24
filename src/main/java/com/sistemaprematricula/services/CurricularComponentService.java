@@ -21,4 +21,8 @@ public class CurricularComponentService {
 	public Optional<CurricularComponent> getCurricularComponent(String code) {
 		return this.curricularComponentRepository.findById(code);
 	}
+
+	public void deleteCurricularComponent(String code) {
+		this.curricularComponentRepository.deleteById(code);
+	}
 }

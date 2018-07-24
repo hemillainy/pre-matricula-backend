@@ -28,4 +28,9 @@ public class CurricularComponentController {
 	public CurricularComponent getCurricularComponent(@PathVariable String code) {
 		return this.curricularComponentService.getCurricularComponent(code).get();
 	}
+	
+	@RequestMapping(value="/delete/{code}", method=RequestMethod.DELETE)
+	public void deleteCurricularComponent(@PathVariable String code) {
+		this.curricularComponentService.deleteCurricularComponent(code);
+	}
 }
