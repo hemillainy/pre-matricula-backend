@@ -43,21 +43,22 @@ public class AllocationService {
 		return result;
 	}
 	
-	public Map<String, ArrayList<String>> getDisciplinesFromStudents() {
-		Map<String, ArrayList<String>> result = new HashMap<>();
+	public Map<String, List<String>> getDisciplinesFromStudents() {
+		Map<String, List<String>> result = new HashMap<>();
 
-		for (Allocation allocation : this.getAll()) {
-			String key = allocation.getStudentEnrollment();
-			String value = allocation.getDisciplineCode();
-			
-			if (result.containsKey(key)) {
-				result.get(key).add(value);
-			} else {
-				result.put(key, new ArrayList<String>());
-				result.get(key).add(value);
-			}
+		List<String> students = this.allocationRepository.findStudents();
+		
+		for (String enrollment : students) {
+			result.put(enrollment, this.getDisciplinesFromStudent(enrollment));
 		}
+		
 		return result;
+	}
+
+
+	public List<String> getDisciplinesFromStudent(String enrollment) {
+		return this.allocationRepository.findDisciplinesFromStudent(enrollment);
+		
 	}
 
 }
