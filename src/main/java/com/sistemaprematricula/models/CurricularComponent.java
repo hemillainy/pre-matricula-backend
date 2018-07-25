@@ -29,9 +29,12 @@ public class CurricularComponent {
 	private String type;
 
 	@Column(name = "period")
+	@NotNull(message = "Class name can not be null")
 	private Integer period;
 	
 	@Column(name = "grid_type")
+	@NotNull(message = "Class name can not be null")
+	@NotEmpty(message = "Class name not be empty.")
 	private String gridType;
 
 	public CurricularComponent() {
