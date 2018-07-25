@@ -22,7 +22,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<User> getAll() {
 		return this.userService.getUsers();
 	}
