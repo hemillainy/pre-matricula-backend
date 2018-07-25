@@ -1,5 +1,6 @@
 package com.sistemaprematricula.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,12 @@ public class UserService {
 	}
 
 	public List<User> getUsers() {
-		return this.userRepository.findAll();
+		try {
+		return this.userRepository.findAll(); 
+		} catch(Exception ex) {
+			List<User> a = new ArrayList<>();
+			return a;
+		}
 	}
 
 	public User save(User user) {
