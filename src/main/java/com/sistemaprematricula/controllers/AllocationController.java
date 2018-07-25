@@ -1,6 +1,5 @@
 package com.sistemaprematricula.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +28,7 @@ public class AllocationController {
 	}
 
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
-	public Map<String, ArrayList<String>> getAllStudentsFromDisciplines() {
+	public Map<String, List<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
 	
@@ -41,6 +40,11 @@ public class AllocationController {
 	@RequestMapping(value = "/student/{enrollment}", method = RequestMethod.GET)
 	public List<String> getDisciplinesFromStudent(@PathVariable String enrollment) {
 		return this.allocationService.getDisciplinesFromStudent(enrollment);
+	}
+	
+	@RequestMapping(value = "/discipline/{code}", method = RequestMethod.GET)
+	public List<String> getStudentsFromDiscipline(@PathVariable String code) {
+		return this.allocationService.getStudentsFromDiscipline(code);
 	}
 	
 }
