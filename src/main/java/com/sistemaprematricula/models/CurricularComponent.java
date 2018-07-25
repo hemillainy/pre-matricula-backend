@@ -1,6 +1,5 @@
 package com.sistemaprematricula.models;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,9 +25,30 @@ public class CurricularComponent {
 	@Column(name = "credits")
 	private int credits;
 
+	@Column(name = "type")
+	private String type;
+
+	@Column(name = "period")
+	private Integer period;
 
 	public CurricularComponent() {
 
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public Integer getPeriod() {
+		return period;
+	}
+
+	public void setPeriod(Integer period) {
+		this.period = period;
 	}
 
 	public String getCode() {
@@ -47,7 +67,6 @@ public class CurricularComponent {
 		this.name = name;
 	}
 
-
 	public int getCredits() {
 		return credits;
 	}
@@ -55,6 +74,5 @@ public class CurricularComponent {
 	public void setCredits(int credits) {
 		this.credits = credits;
 	}
-
 
 }
