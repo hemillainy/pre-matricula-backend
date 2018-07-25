@@ -37,12 +37,12 @@ public class CurricularComponentController {
 		return this.curricularComponentService.getCurricularComponent(code).get();
 	}
 
-	@RequestMapping(value = "/delete/{code}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/delete{code}", method = RequestMethod.DELETE)
 	public void deleteCurricularComponent(@PathVariable String code) {
 		this.curricularComponentService.deleteCurricularComponent(code);
 	}
 
-	@RequestMapping(value = "update/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
 	public void updateCurricularComponent(@PathVariable String id,
 			@RequestBody CurricularComponent curricularComponent) {
 		this.curricularComponentService.updateCurricularComponent(id, curricularComponent);

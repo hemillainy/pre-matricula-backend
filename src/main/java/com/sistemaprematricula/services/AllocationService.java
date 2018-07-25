@@ -21,7 +21,6 @@ public class AllocationService {
 		return this.allocationRepository.findAll();
 	}
 
-	
 	public Allocation save(Allocation allocation) {
 		return this.allocationRepository.save(allocation);
 	}
