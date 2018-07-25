@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.sistemaprematricula.models.user.User;
+
 @Entity
 @Table(name = "allocation")
 public class Allocation {
@@ -27,6 +29,13 @@ public class Allocation {
 	@NotNull(message = "Discipline code can not be null")
 	@NotEmpty(message = "Discipline code can not be empty")
 	private String disciplineCode;
+
+	
+	@Column(name = "student")
+	private User student;
+	
+	
+	private CurricularComponent curricularComponent;
 	
 	public Allocation() {
 		
