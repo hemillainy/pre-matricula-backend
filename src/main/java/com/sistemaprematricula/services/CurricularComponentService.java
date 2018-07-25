@@ -1,5 +1,6 @@
 package com.sistemaprematricula.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,14 @@ import com.sistemaprematricula.repositories.CurricularComponentRepository;
 
 @Service
 public class CurricularComponentService {
-	
+
 	@Autowired
 	CurricularComponentRepository curricularComponentRepository;
-	
+
+	public List<CurricularComponent> getAll() {
+		return this.curricularComponentRepository.findAll();
+	}
+
 	public CurricularComponent save(CurricularComponent curricularComponent) {
 		return this.curricularComponentRepository.save(curricularComponent);
 	}
