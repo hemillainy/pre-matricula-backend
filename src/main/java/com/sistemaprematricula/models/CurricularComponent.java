@@ -30,9 +30,20 @@ public class CurricularComponent {
 
 	@Column(name = "period")
 	private Integer period;
+	
+	@Column(name = "grid_type")
+	private String gridType;
 
 	public CurricularComponent() {
+		
+	}
 
+	public String getGridType() {
+		return gridType;
+	}
+
+	public void setGridType(String gridType) {
+		this.gridType = gridType;
 	}
 
 	public String getType() {
