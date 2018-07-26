@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.sistemaprematricula.models.CurricularComponent;
 
 @Repository
-public interface CurricularComponentRepository extends JpaRepository<CurricularComponent, String>{
+public interface CurricularComponentRepository extends JpaRepository<CurricularComponent, Long>{
 
 }
