@@ -32,18 +32,18 @@ public class CurricularComponentController {
 		return this.curricularComponentService.save(curricularComponent);
 	}
 
-	@RequestMapping(value = "/{code}", method = RequestMethod.GET)
-	public CurricularComponent getCurricularComponent(@PathVariable String code) {
-		return this.curricularComponentService.getCurricularComponent(code).get();
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public CurricularComponent getCurricularComponent(@PathVariable Long id) {
+		return this.curricularComponentService.getCurricularComponent(id).get();
 	}
 
-	@RequestMapping(value = "/delete{code}", method = RequestMethod.DELETE)
-	public void deleteCurricularComponent(@PathVariable String code) {
-		this.curricularComponentService.deleteCurricularComponent(code);
+	@RequestMapping(value = "/delete{id}", method = RequestMethod.DELETE)
+	public void deleteCurricularComponent(@PathVariable Long id) {
+		this.curricularComponentService.deleteCurricularComponent(id);
 	}
 
 	@RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
-	public void updateCurricularComponent(@PathVariable String id,
+	public void updateCurricularComponent(@PathVariable Long id,
 			@RequestBody CurricularComponent curricularComponent) {
 		this.curricularComponentService.updateCurricularComponent(id, curricularComponent);
 	}

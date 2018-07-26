@@ -23,15 +23,15 @@ public class CurricularComponentService {
 		return this.curricularComponentRepository.save(curricularComponent);
 	}
 
-	public Optional<CurricularComponent> getCurricularComponent(String code) {
-		return this.curricularComponentRepository.findById(code);
+	public Optional<CurricularComponent> getCurricularComponent(Long id) {
+		return this.curricularComponentRepository.findById(id);
 	}
 
-	public void deleteCurricularComponent(String code) {
-		this.curricularComponentRepository.deleteById(code);
+	public void deleteCurricularComponent(Long id) {
+		this.curricularComponentRepository.deleteById(id);
 	}
 
-	public void updateCurricularComponent(String id, CurricularComponent curricularComponent) {
+	public void updateCurricularComponent(Long id, CurricularComponent curricularComponent) {
 		if (this.curricularComponentRepository.existsById(id)) {
 			this.curricularComponentRepository.save(curricularComponent);
 		}
