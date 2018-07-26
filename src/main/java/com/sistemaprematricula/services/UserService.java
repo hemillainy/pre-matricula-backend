@@ -15,8 +15,8 @@ public class UserService {
 	@Autowired
 	UserRepository userRepository;
 
-	public Optional<User> getUser(String enrollment) {
-		return this.userRepository.findById(enrollment);
+	public Optional<User> getUser(Long id) {
+		return this.userRepository.findById(id);
 	}
 
 	public List<User> getUsers() {

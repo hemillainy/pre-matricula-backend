@@ -33,9 +33,9 @@ public class UserController {
 		return this.userService.save(user);
 	}
 	
-	@RequestMapping(value = "/{enrollment}", method = RequestMethod.GET)
-	public User getUser(@PathVariable String enrollment) {
-		return this.userService.getUser(enrollment).get();
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public User getUser(@PathVariable Long id) {
+		return this.userService.getUser(id).get();
 	}
 
 }
