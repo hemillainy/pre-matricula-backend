@@ -2,8 +2,6 @@ package com.sistemaprematricula.models.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -17,10 +15,6 @@ import javax.validation.constraints.NotNull;
 public class User {
 
 	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
 	@Column(name = "enrollment")
 	@NotNull(message = "User enrollment can not be null")
 	@NotEmpty(message = "User enrollment can not be empty")
@@ -83,11 +77,4 @@ public class User {
 		this.password = password;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 }
