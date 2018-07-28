@@ -2,8 +2,6 @@ package com.sistemaprematricula.models.user;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -12,11 +10,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name="user_system")
+@Table(name = "user_system")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
-	@Id	
+	@Id
 	@Column(name = "enrollment")
 	private String enrollment;
 
