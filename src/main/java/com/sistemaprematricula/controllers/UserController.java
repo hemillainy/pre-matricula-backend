@@ -15,25 +15,25 @@ import com.sistemaprematricula.services.UserService;
 
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/user")
 @CrossOrigin(value = "*")
 public class UserController {
 	
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<User> getAll() {
 		return this.userService.getUsers();
 	}
 	
 	
-	@RequestMapping(value = "/user", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public User save(@RequestBody User user) {
 		return this.userService.save(user);
 	}
 	
-	@RequestMapping(value = "/api/{enrollment}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{enrollment}", method = RequestMethod.GET)
 	public User getUser(@PathVariable String enrollment) {
 		return this.userService.getUser(enrollment).get();
 	}
