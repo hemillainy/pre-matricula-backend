@@ -15,24 +15,24 @@ import com.sistemaprematricula.models.Allocation;
 import com.sistemaprematricula.services.AllocationService;
 
 @RestController
-@RequestMapping(value = "/allocation")
+@RequestMapping(value = "/api/allocation")
 @CrossOrigin(value = "*")
 public class AllocationController {
 
 	@Autowired
 	AllocationService allocationService;
 
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public Allocation save(@RequestBody Allocation allocation) {
 		return this.allocationService.save(allocation);
 	}
 
-	@RequestMapping(value = "/all", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
 	
-	@RequestMapping(value = "/students", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllDisciplinesFromStudents() {
 		return this.allocationService.getDisciplinesFromStudents();
 	}
