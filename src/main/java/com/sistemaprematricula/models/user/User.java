@@ -12,18 +12,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user")
+@Table(name="user_system")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-	
+	@Id	
 	@Column(name = "enrollment")
-	@NotNull(message = "User enrollment can not be null")
-	@NotEmpty(message = "User enrollment can not be empty")
 	private String enrollment;
 
 	@Column(name = "email")

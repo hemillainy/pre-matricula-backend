@@ -15,7 +15,7 @@ public class UserService {
 	@Autowired
 	UserRepository userRepository;
 
-	public Optional<User> getUser(Long enrollment) {
+	public Optional<User> getUser(String enrollment) {
 		return this.userRepository.findById(enrollment);
 	}
 
@@ -27,5 +27,4 @@ public class UserService {
 		this.userRepository.save(user);
 		return user;
 	}
-
 }
