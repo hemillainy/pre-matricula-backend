@@ -14,35 +14,35 @@ import com.sistemaprematricula.models.CurricularComponent;
 import com.sistemaprematricula.services.CurricularComponentService;
 
 @RestController
-@RequestMapping(value = "/api/curricularComponent")
+@RequestMapping(value = "/api")
 @CrossOrigin(value = "*")
 public class CurricularComponentController {
 
 	@Autowired
 	CurricularComponentService curricularComponentService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/curricularComponent/", method = RequestMethod.GET)
 	public List<CurricularComponent> getAll() {
 		return this.curricularComponentService.getAll();
 
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = "/curricularComponent/", method = RequestMethod.POST)
 	public CurricularComponent save(@RequestBody CurricularComponent curricularComponent) {
 		return this.curricularComponentService.save(curricularComponent);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/curricularComponent/{id}", method = RequestMethod.GET)
 	public CurricularComponent getCurricularComponent(@PathVariable Long id) {
 		return this.curricularComponentService.getCurricularComponent(id).get();
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/curricularComponent/{id}", method = RequestMethod.DELETE)
 	public void deleteCurricularComponent(@PathVariable Long id) {
 		this.curricularComponentService.deleteCurricularComponent(id);
 	}
 
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/curricularComponent/{id}", method = RequestMethod.PUT)
 	public void updateCurricularComponent(@PathVariable Long id,
 			@RequestBody CurricularComponent curricularComponent) {
 		this.curricularComponentService.updateCurricularComponent(id, curricularComponent);
