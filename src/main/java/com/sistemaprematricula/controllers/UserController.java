@@ -34,8 +34,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public User getUser(@PathVariable Long id) {
-		return this.userService.getUser(id).get();
+	public User getUser(@PathVariable String enrollment) {
+		return this.userService.getUser(enrollment).get();
 	}
 
 }
