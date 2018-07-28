@@ -15,34 +15,34 @@ import com.sistemaprematricula.models.Allocation;
 import com.sistemaprematricula.services.AllocationService;
 
 @RestController
-@RequestMapping(value = "/api/allocation")
+@RequestMapping(value = "/api")
 @CrossOrigin(value = "*")
 public class AllocationController {
 
 	@Autowired
 	AllocationService allocationService;
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+	@RequestMapping(value = "/allocation", method = RequestMethod.POST)
 	public Allocation save(@RequestBody Allocation allocation) {
 		return this.allocationService.save(allocation);
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/allocation/", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/allocation/students", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllDisciplinesFromStudents() {
 		return this.allocationService.getDisciplinesFromStudents();
 	}
 
-	@RequestMapping(value = "/student/{enrollment}", method = RequestMethod.GET)
+	@RequestMapping(value = "/allocation/student/{enrollment}", method = RequestMethod.GET)
 	public List<String> getDisciplinesFromStudent(@PathVariable String enrollment) {
 		return this.allocationService.getDisciplinesFromStudent(enrollment);
 	}
 	
-	@RequestMapping(value = "/discipline/{code}", method = RequestMethod.GET)
+	@RequestMapping(value = "/allocation/discipline/{code}", method = RequestMethod.GET)
 	public List<String> getStudentsFromDiscipline(@PathVariable String code) {
 		return this.allocationService.getStudentsFromDiscipline(code);
 	}
