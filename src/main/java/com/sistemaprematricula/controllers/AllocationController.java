@@ -26,13 +26,14 @@ public class AllocationController {
 	public Allocation save(@RequestBody Allocation allocation) {
 		return this.allocationService.save(allocation);
 	}
+	
 
 	@RequestMapping(value = "/allocation/", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
 	
-	@RequestMapping(value = "/allocation/students", method = RequestMethod.GET)
+	@RequestMapping(value = "/allocation/student", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllDisciplinesFromStudents() {
 		return this.allocationService.getDisciplinesFromStudents();
 	}
