@@ -13,25 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sistemaprematricula.models.user.User;
 import com.sistemaprematricula.services.UserService;
 
+
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/api")
 @CrossOrigin(value = "*")
 public class UserController {
-
+	
 	@Autowired
 	UserService userService;
-
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public List<User> getAll() {
 		return this.userService.getUsers();
 	}
-
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	
+	
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public User save(@RequestBody User user) {
 		return this.userService.save(user);
 	}
-
-	@RequestMapping(value = "/{enrollment}", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/api/{enrollment}", method = RequestMethod.GET)
 	public User getUser(@PathVariable String enrollment) {
 		return this.userService.getUser(enrollment).get();
 	}
