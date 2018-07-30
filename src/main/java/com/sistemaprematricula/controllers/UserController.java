@@ -22,13 +22,13 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(value = "/user/", method = RequestMethod.GET)
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public List<User> getAll() {
 		return this.userService.getUsers();
 	}
 	
 	
-	@RequestMapping(value = "/user/", method = RequestMethod.POST)
+	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public User save(@RequestBody User user) {
 		return this.userService.save(user);
 	}

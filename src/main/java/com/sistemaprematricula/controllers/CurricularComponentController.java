@@ -21,13 +21,13 @@ public class CurricularComponentController {
 	@Autowired
 	CurricularComponentService curricularComponentService;
 
-	@RequestMapping(value = "/curricularComponent/", method = RequestMethod.GET)
+	@RequestMapping(value = "/curricularComponent", method = RequestMethod.GET)
 	public List<CurricularComponent> getAll() {
 		return this.curricularComponentService.getAll();
 
 	}
 
-	@RequestMapping(value = "/curricularComponent/", method = RequestMethod.POST)
+	@RequestMapping(value = "/curricularComponent", method = RequestMethod.POST)
 	public CurricularComponent save(@RequestBody CurricularComponent curricularComponent) {
 		return this.curricularComponentService.save(curricularComponent);
 	}
