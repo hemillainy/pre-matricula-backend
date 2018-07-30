@@ -28,19 +28,13 @@ public class User {
 	@NotEmpty(message = "User name can not be empty")
 	private String name;
 
-	@Column(name = "password")
-	@NotNull(message = "User password can not be null")
-	@NotEmpty(message = "User password can not be empty")
-	private String password;
-
 	public User() {
 	}
 
-	public User(String enrollment, String email, String name, String password) {
+	public User(String enrollment, String email, String name) {
 		this.enrollment = enrollment;
 		this.email = email;
 		this.name = name;
-		this.password = password;
 	}
 
 	public String getEnrollment() {
@@ -65,14 +59,6 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 }
