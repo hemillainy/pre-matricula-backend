@@ -21,8 +21,11 @@ public class AllocationService {
 		return this.allocationRepository.findAll();
 	}
 
-	public Allocation save(Allocation allocation) {
-		return this.allocationRepository.save(allocation);
+	public Allocation[] save(Allocation[] allocations) {
+		for (Allocation allocation: allocations) {
+			this.allocationRepository.save(allocation);
+		}
+		return allocations;
 	}
 
 	public Map<String, List<String>> getStudentsFromDiscipline() {

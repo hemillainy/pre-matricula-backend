@@ -23,7 +23,7 @@ public class AllocationController {
 	AllocationService allocationService;
 
 	@RequestMapping(value = "/allocation", method = RequestMethod.POST)
-	public Allocation save(@RequestBody Allocation allocation) {
+	public Allocation[] save(@RequestBody Allocation[] allocation) {
 		return this.allocationService.save(allocation);
 	}
 	
