@@ -33,9 +33,13 @@ public class UserController {
 		return this.userService.save(user);
 	}
 	
-	@RequestMapping(value = "/user/{enrollment}", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/searchByEnrollment/{enrollment}", method = RequestMethod.GET)
 	public User getUser(@PathVariable String enrollment) {
 		return this.userService.getUser(enrollment).get();
 	}
-
+	
+	@RequestMapping(value = "/user/searchByEmail/{email}", method = RequestMethod.GET)
+	public User getUserByEmail(@PathVariable String email) {
+		return this.userService.getUserByEmail(email);
+	}
 }
