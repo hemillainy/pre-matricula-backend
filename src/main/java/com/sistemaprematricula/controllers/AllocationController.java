@@ -28,7 +28,7 @@ public class AllocationController {
 	}
 	
 
-	@RequestMapping(value = "/allocation/", method = RequestMethod.GET)
+	@RequestMapping(value = "/allocation", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllStudentsFromDisciplines() {
 		return this.allocationService.getStudentsFromDiscipline();
 	}
