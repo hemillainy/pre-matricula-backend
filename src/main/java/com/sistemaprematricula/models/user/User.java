@@ -3,25 +3,23 @@ package com.sistemaprematricula.models.user;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user_system")
-@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
 	@Id
+	@Column(name = "email")
+	private String email;
+
 	@Column(name = "enrollment")
+	@NotNull(message = "User enrollment can not be null")
+	@NotEmpty(message = "User enrollment can not be empty")
 	private String enrollment;
 
-	@Column(name = "email")
-	@NotNull(message = "User email can not be null")
-	@NotEmpty(message = "User email can not be empty")
-	private String email;
 
 	@Column(name = "name")
 	@NotNull(message = "User name can not be null")
