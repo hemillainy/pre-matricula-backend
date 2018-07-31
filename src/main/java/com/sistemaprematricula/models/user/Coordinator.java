@@ -8,6 +8,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name = "coordinator")
 @PrimaryKeyJoinColumn(name = "coordinator_id", referencedColumnName="enrollment")
@@ -18,7 +21,8 @@ public class Coordinator extends User {
 	@NotEmpty(message = "User password can not be empty")
 	private String password;
 
-	public Coordinator(String enrollment, String email, String name, String password) {
+	@JsonCreator
+	public Coordinator(@JsonProperty("enrollment") String enrollment, @JsonProperty("email") String email,@JsonProperty("name") String name, @JsonProperty("password") String password) {
 		super(enrollment, email, name);
 		this.password = password;
 	}

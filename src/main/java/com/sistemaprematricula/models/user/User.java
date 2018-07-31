@@ -9,21 +9,36 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 @Entity
 @Table(name = "user_system")
+@JsonTypeInfo(
+		  use = JsonTypeInfo.Id.CLASS, 
+		  include = JsonTypeInfo.As.PROPERTY,
+		  property = "type"
+)
+@JsonSubTypes({ 
+	  @Type(value = Coordinator.class, name = "coordinator")
+})
 @Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
 	@Id
+//	@JsonProperty("enrollment")
 	@Column(name = "enrollment")
 	private String enrollment;
 
 	@Column(name = "email")
+//	@JsonProperty("email")
 	@NotNull(message = "User email can not be null")
 	@NotEmpty(message = "User email can not be empty")
 	private String email;
 
 	@Column(name = "name")
+//	@JsonProperty("name")
 	@NotNull(message = "User name can not be null")
 	@NotEmpty(message = "User name can not be empty")
 	private String name;
