@@ -2,8 +2,6 @@ package com.sistemaprematricula.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -14,13 +12,7 @@ import javax.validation.constraints.NotNull;
 public class CurricularComponent {
 
 	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
 	@Column(name = "code")
-	@NotNull(message = "Class code can not be null")
-	@NotEmpty(message = "Class can not be empty.")
 	private String code;
 
 	@Column(name = "name")
@@ -32,6 +24,7 @@ public class CurricularComponent {
 	private int credits;
 
 	@Column(name = "type")
+	@NotNull(message = "Type of curricular component can't be null")
 	private String type;
 
 	@Column(name = "period")
@@ -93,14 +86,6 @@ public class CurricularComponent {
 
 	public void setCredits(int credits) {
 		this.credits = credits;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 }
