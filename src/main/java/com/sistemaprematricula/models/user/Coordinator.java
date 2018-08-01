@@ -1,24 +1,9 @@
 package com.sistemaprematricula.models.user;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-@Entity
-@Table(name = "coordinator")
 public class Coordinator{
 
-	@Id
-	@Column(name = "email")
-	private String email;
-	
 	private static Coordinator coordinator;
-
-	@Column(name = "password")
-	@NotNull(message = "User password can not be null")
+	private String email;
 	private Integer password;
 
 	private Coordinator() {
@@ -44,7 +29,7 @@ public class Coordinator{
 	
 	
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
