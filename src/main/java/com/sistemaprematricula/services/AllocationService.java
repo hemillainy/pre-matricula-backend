@@ -27,7 +27,7 @@ public class AllocationService {
 		}
 		return allocations;
 	}
-
+	
 	public Map<String, List<String>> getStudentsFromDiscipline() {
 		Map<String, List<String>> result = new HashMap<>();
 		

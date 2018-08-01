@@ -1,13 +1,18 @@
 package com.sistemaprematricula.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+
+import com.sistemaprematricula.models.user.User;
 
 @Entity
 @Table(name = "allocation")
@@ -19,32 +24,42 @@ public class Allocation {
 	private Long id;
 	
 	@Column(name = "student_enrollment")
-	@NotNull(message = "Student enrollment can not be null")
-	@NotEmpty(message = "Student enrollment can not be empty")
-	private String studentEnrollment;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "student_enrollment")
+	private User student;
 	
 	@Column(name = "discipline_code")
-	@NotNull(message = "Discipline code can not be null")
-	@NotEmpty(message = "Discipline code can not be empty")
-	private String disciplineCode;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "curricular_component_code")
+	private CurricularComponent curricularComponent;
 	
 	public Allocation() {
 		
 	}
 
-	public String getStudentEnrollment() {
-		return studentEnrollment;
+	public Long getId() {
+		return id;
 	}
 
-	public void setStudentEnrollment(String studentEnrollment) {
-		this.studentEnrollment = studentEnrollment;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getDisciplineCode() {
-		return disciplineCode;
+	public User getStudent() {
+		return student;
 	}
 
-	public void setDisciplineCode(String disciplineCode) {
-		this.disciplineCode = disciplineCode;
+	public void setStudent(User student) {
+		this.student = student;
 	}
+
+	public CurricularComponent getCurricularComponent() {
+		return curricularComponent;
+	}
+
+	public void setCurricularComponent(CurricularComponent curricularComponent) {
+		this.curricularComponent = curricularComponent;
+	}
+
+
 }
