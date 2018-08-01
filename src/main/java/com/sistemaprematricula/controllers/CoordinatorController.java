@@ -17,6 +17,11 @@ public class CoordinatorController {
 	@Autowired
 	CoordinatorService coordinatorService;
 	
+	@RequestMapping(value = "/coordinator/{email}", method = RequestMethod.GET)
+	public Boolean validateEmail(String email) {
+		return this.coordinatorService.validateEmail(email);
+	}
+	
 	@RequestMapping(value = "/coordinator/{password}", method = RequestMethod.GET)
 	public Boolean  validatePassword(@PathVariable String password) {
 		return this.coordinatorService.validatePassword(password);
@@ -34,5 +39,4 @@ public class CoordinatorController {
 		} 
 		return this.validatePassword(oldPassword);
 	}
-
 }
