@@ -21,5 +21,18 @@ public class CoordinatorController {
 	public Boolean  validatePassword(@PathVariable String password) {
 		return this.coordinatorService.validatePassword(password);
 	}
+	
+	@RequestMapping(value = "/coordinator", method = RequestMethod.GET)
+	public String getEmail() {
+		return this.coordinatorService.getEmail();
+	}
+	
+	@RequestMapping(value = "/coordinator/password", method = RequestMethod.PUT)
+	public Boolean setPassword(String oldPassword, String newPassword) {
+		if(this.validatePassword(oldPassword)) {
+			this.coordinatorService.setPassword(newPassword);
+		} 
+		return this.validatePassword(oldPassword);
+	}
 
 }

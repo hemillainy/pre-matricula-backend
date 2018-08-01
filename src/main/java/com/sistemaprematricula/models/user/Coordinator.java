@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,11 +19,11 @@ public class Coordinator{
 
 	@Column(name = "password")
 	@NotNull(message = "User password can not be null")
-	@NotEmpty(message = "User password can not be empty")
-	private String password;
+	private Integer password;
+
 	private Coordinator() {
 		this.email = "geovane.silva@ccc.ufcg.edu.br";
-		this.password = "ccspm";
+		this.password = "ccspm".hashCode();
 	}
 	
 	
@@ -35,11 +34,11 @@ public class Coordinator{
 		return coordinator;
 	}
 
-	public String getPassword() {
+	public Integer getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(Integer password) {
 		this.password = password;
 	}	
 	
