@@ -26,6 +26,19 @@ public class Student {
 	@NotEmpty(message = "Student name can not be empty")
 	private String name;
 
+	@Column(name = "grid_type")
+	@NotNull(message = "Grip type can not be null")
+	@NotEmpty(message = "Grid type can not be empty")
+	private String gridType;
+	
+	public String getGridType() {
+		return gridType;
+	}
+
+	public void setGridType(String gridType) {
+		this.gridType = gridType;
+	}
+
 	public Student() {
 	}
 
