@@ -39,8 +39,7 @@ public class Student {
 		this.gridType = gridType;
 	}
 
-	public Student() {
-	}
+	public Student() {}
 
 	public Student(String enrollment, String email, String name) {
 		this.enrollment = enrollment;
