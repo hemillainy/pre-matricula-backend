@@ -27,6 +27,11 @@ public class AllocationController {
 		return this.allocationService.save(allocation);
 	}
 	
+	@RequestMapping(value = "/allocation", method = RequestMethod.DELETE)
+	public void delete(@RequestBody Allocation[] allocation) {
+		this.allocationService.delete(allocation);
+	}
+	
 
 	@RequestMapping(value = "/allocation", method = RequestMethod.GET)
 	public Map<String, List<String>> getAllStudentsFromDisciplines() {

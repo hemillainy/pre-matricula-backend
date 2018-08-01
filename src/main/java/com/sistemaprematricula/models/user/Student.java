@@ -8,28 +8,28 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "user_system")
-public class User {
+@Table(name = "student")
+public class Student {
 
 	@Id
 	@Column(name = "email")
 	private String email;
 
-	@Column(name = "enrollment")
-	@NotNull(message = "User enrollment can not be null")
-	@NotEmpty(message = "User enrollment can not be empty")
+	@Column(name = "enrollment", unique=true)
+	@NotNull(message = "Student enrollment can not be null")
+	@NotEmpty(message = "Student enrollment can not be empty")
 	private String enrollment;
 
 
 	@Column(name = "name")
-	@NotNull(message = "User name can not be null")
-	@NotEmpty(message = "User name can not be empty")
+	@NotNull(message = "Student name can not be null")
+	@NotEmpty(message = "Student name can not be empty")
 	private String name;
 
-	public User() {
+	public Student() {
 	}
 
-	public User(String enrollment, String email, String name) {
+	public Student(String enrollment, String email, String name) {
 		this.enrollment = enrollment;
 		this.email = email;
 		this.name = name;

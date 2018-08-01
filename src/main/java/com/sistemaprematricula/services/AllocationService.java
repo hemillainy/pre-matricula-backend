@@ -20,6 +20,12 @@ public class AllocationService {
 	public List<Allocation> getAll() {
 		return this.allocationRepository.findAll();
 	}
+	
+	public void delete(Allocation[] allocations) {
+		for (Allocation allocation: allocations) {
+			this.allocationRepository.deleteAux(allocation.getDisciplineCode(), allocation.getStudentEnrollment());
+		}
+	}
 
 	public Allocation[] save(Allocation[] allocations) {
 		for (Allocation allocation: allocations) {
@@ -55,10 +61,15 @@ public class AllocationService {
 		return result;
 	}
 
-
 	public List<String> getDisciplinesFromStudent(String enrollment) {
 		return this.allocationRepository.findDisciplinesFromStudent(enrollment);
 		
 	}
+	
+	public Boolean verifyAllocation(String enrollment, String code) {
+		List<String> allocation = this.getDisciplinesFromStudent(enrollment);
+		return allocation.contains(code);
+	}
+	
 
 }
