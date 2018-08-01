@@ -15,14 +15,24 @@ public class Coordinator{
 	@Id
 	@Column(name = "email")
 	private String email;
+	
+	private static Coordinator coordinator;
 
 	@Column(name = "password")
 	@NotNull(message = "User password can not be null")
 	@NotEmpty(message = "User password can not be empty")
 	private String password;
-	public Coordinator(String email, String password) {
-		
-		this.password = password;
+	private Coordinator() {
+		this.email = "geovane.silva@ccc.ufcg.edu.br";
+		this.password = "ccspm";
+	}
+	
+	
+	public static Coordinator getInstance() {
+		if (coordinator == null) {
+			coordinator = new Coordinator();
+		}
+		return coordinator;
 	}
 
 	public String getPassword() {
