@@ -27,6 +27,7 @@ public class CoordinatorController {
 		return this.coordinatorService.getEmail();
 	}
 	
+	@RequestMapping(value = "/coordinator/password", method = RequestMethod.PUT)
 	public Boolean setPassword(String oldPassword, String newPassword) {
 		if(this.validatePassword(oldPassword)) {
 			this.coordinatorService.setPassword(newPassword);
