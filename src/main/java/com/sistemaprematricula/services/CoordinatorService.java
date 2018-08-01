@@ -17,7 +17,7 @@ public class CoordinatorService {
 	
 	public Boolean validatePassword(String password) {
 		this.validateCoordinator();
-		return this.coordinatorRepository.getPassword().equals(password);
+		return this.coordinatorRepository.getPassword().equals(password.hashCode());
 	}
 	
 	private void validateCoordinator() {
@@ -31,5 +31,10 @@ public class CoordinatorService {
 		this.validateCoordinator();
 		this.coordinatorRepository.setPassword(password, this.coordinator.getEmail());
 	 }
+
+	public String getEmail() {
+		this.validateCoordinator();
+		return this.coordinator.getEmail();
+	}
 
 }
