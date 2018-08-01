@@ -18,7 +18,7 @@ public class CoordinatorController {
 	CoordinatorService coordinatorService;
 	
 	@RequestMapping(value = "/coordinator/validateEmail/{email}", method = RequestMethod.GET)
-	public Boolean validateEmail(String email) {
+	public Boolean validateEmail(@PathVariable String email) {
 		return this.coordinatorService.validateEmail(email);
 	}
 	
