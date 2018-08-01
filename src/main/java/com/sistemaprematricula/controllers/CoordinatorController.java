@@ -3,6 +3,7 @@ package com.sistemaprematricula.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,10 +34,10 @@ public class CoordinatorController {
 	}
 	
 	@RequestMapping(value = "/coordinator/password", method = RequestMethod.PUT)
-	public Boolean setPassword(String oldPassword, String newPassword) {
-		if(this.validatePassword(oldPassword)) {
-			this.coordinatorService.setPassword(newPassword);
+	public Boolean setPassword(@RequestBody String[] passwords) {
+		if(this.validatePassword(passwords[0])) {
+			this.coordinatorService.setPassword(passwords[1]);
 		} 
-		return this.validatePassword(oldPassword);
+		return this.validatePassword(passwords[0]);
 	}
 }
