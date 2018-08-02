@@ -7,7 +7,7 @@ public class Coordinator{
 	private Integer password;
 
 	private Coordinator() {
-		this.email = "geovane.silva@ccc.ufcg.edu.br";
+		this.email = "projsw@ccc.ufcg.edu.br";
 		this.password = "ccspm".hashCode();
 	}
 	
