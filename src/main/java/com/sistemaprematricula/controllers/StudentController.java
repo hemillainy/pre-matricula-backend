@@ -42,4 +42,9 @@ public class StudentController {
 	public Student getStudentByEmail(@PathVariable String email) {
 		return this.studentService.getStudentByEmail(email);
 	}
+
+	@RequestMapping(value = "/user/{email}", method = RequestMethod.GET)
+	public Boolean isRegistered(@PathVariable String email) {
+		return this.studentService.isRegistered(email);
+	}
 }

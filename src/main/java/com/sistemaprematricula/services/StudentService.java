@@ -29,6 +29,10 @@ public class StudentService {
 	}
 
 	public Student getStudentByEmail(String email) {
-		return this.studentRepository.findStudentFromEmail(email);
+		return this.studentRepository.getOne(email);
+	}
+
+	public Boolean isRegistered(String email) {
+		return this.getStudentByEmail(email) != null;
 	}
 }

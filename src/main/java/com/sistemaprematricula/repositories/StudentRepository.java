@@ -9,7 +9,4 @@ import com.sistemaprematricula.models.user.Student;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, String> {
-	
-	@Query("select s from Student s where s.email = ?1")
-	public Student findStudentFromEmail(String email);
 }
