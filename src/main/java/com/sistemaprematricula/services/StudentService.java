@@ -33,6 +33,6 @@ public class StudentService {
 	}
 
 	public Boolean isRegistered(String email) {
-		return this.getStudentByEmail(email) != null;
+		return this.studentRepository.existsById(email);
 	}
 }
